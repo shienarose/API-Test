@@ -1,14 +1,16 @@
-
 let Data = pm.response.json()
 //set variable
- // pm.environment.set("temperature",Data.main.temp)
-  var A = Data.main.temp -273.15
-  pm.test("Check for temperature", function(){
+  var temp = Data.main.temp - 273.15
+  A = temp.toFixed(2)
+  pm.test("Temperature for the day is in the response", function(){
    
     if (A <= 20){
+        pm.test("The temperature is " + A + ". Its cold,traveller should pack woolens.")
         console.log("The temperature is " + A + ". Its cold,traveller should pack woolens.");
            }
-           else 
-           console.log("The temperature is " + A + ". It's not cold, traveler should pack swimmers.");
+    else 
+        pm.test("The temperature is " + A + ". It's not cold, traveler should pack swimmers.")
+        console.log("The temperature is " + A + ". It's not cold, traveler should pack swimmers.");
   })
 
+        
