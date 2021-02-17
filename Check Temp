@@ -6,11 +6,9 @@ let Data = pm.response.json()
    
     if (A <= 20){
         pm.test("The temperature is " + A + ". Its cold,traveller should pack woolens.")
-        console.log("The temperature is " + A + ". Its cold,traveller should pack woolens.");
            }
     else 
         pm.test("The temperature is " + A + ". It's not cold, traveler should pack swimmers.")
-        console.log("The temperature is " + A + ". It's not cold, traveler should pack swimmers.");
   })
 
         
