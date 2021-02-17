@@ -1,14 +1,17 @@
+    
 let Data = pm.response.json()
 //set variable
   var temp = Data.main.temp - 273.15
   A = temp.toFixed(2)
+  Country = pm.variables.get("CountryCity");
+    
   pm.test("Temperature for the day is in the response", function(){
-   
+
     if (A <= 20){
-        pm.test("The temperature is " + A + ". Its cold,traveller should pack woolens.")
+        pm.test("The temperature in " + Country +" is " + A + "°C. Its cold,traveller should pack woolens.")
+        
            }
     else 
-        pm.test("The temperature is " + A + ". It's not cold, traveler should pack swimmers.")
+        pm.test("The temperature in " + Country +" is " + A + "°C. It's not cold, traveler should pack swimmers.")
+      
   })
-
-        
